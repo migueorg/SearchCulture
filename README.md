@@ -1,2 +1,2 @@
 # tmp-Proyecto-IV
-Proyecto temporal hasta que se me ocurre la idea 
+Proyecto en la nube que llevará el control de inventario para una tienda o particular. (susceptible a cambios)
