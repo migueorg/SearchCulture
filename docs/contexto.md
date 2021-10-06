@@ -32,4 +32,7 @@ Si expresamos las conclusiones anteriores en forma de HUs, nos quedaría de la s
 
 ## Productos Finales que se entregarán
 
-...
+1. Portal capaz de recomendar el contenido adecuado basandose solo en preguntas al usuario sobre su forma de pensar, actuar, sentimientos actuales, y preguntas de índole general, sin preguntas técnicas
+2. Función para exportar a CSV los datos recopilados más demandados por los usuarios.
+3. Módulo para interpretar y representados gráficamente los datos recopilados por la aplicación. 
+4. Enlaces por defecto de los resultados usando el servicio proveedor interesado.
