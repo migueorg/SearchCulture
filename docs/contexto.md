@@ -26,13 +26,13 @@ Del texto anterior podemos sacar tres tipos de usuarios interesados en este proy
 
 Si expresamos las conclusiones anteriores en forma de HUs, nos quedaría de la siguiente forma: 
 
-1. [HU01] Como usuario promedio quiero obtener recomendaciones de películas, series, libros y música que me vayan a gustar o me apetezca consumir, sin necesidad de conocer títulos ni géneros ni autores, simplemente respondiendo preguntas sobre mi.
-2. [HU02] Como productor de contenido quiero saber que es lo que demanda la gente, gustos por épocas y zonas, sin influencias de la propia plataforma ni títulos de ejemplo, simplemente conocer más los intereses de los usuarios de contenido de ocio.
-3. [HU03] Como representante de servicios que ofrecen contenido quiero que mi plataforma sea la predeterminada cuando se devuelva un resultado candidato para consumir por el usuario promedio, para captar de esta forma todas las visitas posibles.
+1. [[HU01]]((https://github.com/migueorg/SearchCulture/issues/2)) Como usuario promedio quiero obtener recomendaciones de películas, series, libros y música que me vayan a gustar o me apetezca consumir, sin necesidad de conocer títulos ni géneros ni autores, simplemente respondiendo preguntas sobre mi.
+2. [[HU02]](https://github.com/migueorg/SearchCulture/issues/3) Como empresa cliente quiero obtener los datos recopilados de los usuarios en formato CSV para que puedan ser tratados por nuestro equipo informático
+3. [[HU03]](https://github.com/migueorg/SearchCulture/issues/4) Como empresa cliente quiero ver los datos recopilados representados de forma gráfica, y con un resumen simple de los mismos.
+4. [[HU04]](https://github.com/migueorg/SearchCulture/issues/5) Como representante de servicios que ofrecen contenido quiero que mi plataforma sea la predeterminada cuando se devuelva un resultado candidato para consumir por el usuario promedio, para captar de esta forma todas las visitas posibles.
 
 ## Productos Finales que se entregarán
 
-1. Portal capaz de recomendar el contenido adecuado basandose solo en preguntas al usuario sobre su forma de pensar, actuar, sentimientos actuales, y preguntas de índole general, sin preguntas técnicas
-2. Función para exportar a CSV los datos recopilados más demandados por los usuarios.
-3. Módulo para interpretar y representados gráficamente los datos recopilados por la aplicación. 
-4. Enlaces por defecto de los resultados usando el servicio proveedor interesado.
+1. [[M1]](https://github.com/migueorg/SearchCulture/milestone/1) Portal capaz de recomendar el contenido adecuado basandose solo en preguntas al usuario sobre su forma de pensar, actuar, sentimientos actuales, y preguntas de índole general, sin preguntas técnicas.
+2. [[M2]](https://github.com/migueorg/SearchCulture/milestone/5) Funcionalidad que interprete los datos recopilados.
+3. [[M3]](https://github.com/migueorg/SearchCulture/milestone/4) Enlaces por defecto de los resultados usando el servicio proveedor interesado.
