@@ -6,6 +6,6 @@ Proyecto en la nube que será capaz de recomendar contenido (Películas, Series,
 
 ### Licencia: MIT :recycle:
 
-### User Journey e Historias de Usuario: Disponible en [docs/contexto.md](https://github.com/migueorg/SearchCulture/docs/contexto.md) :airplane:
+### User Journey:airplane: e Historias de Usuario: Disponible en [docs/contexto.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/contexto.md) 
 
-### Otra documentación secundaria: [docs/wiki.md](https://github.com/migueorg/SearchCulture/docs/wiki.md) :file_folder:
+### Otra documentación secundaria: [docs/wiki.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/wiki.md) :file_folder:
