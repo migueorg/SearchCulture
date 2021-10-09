@@ -18,7 +18,7 @@ Por tanto vemos usuarios modelo como:
 
 Del texto anterior podemos sacar tres tipos de usuarios interesados en este proyecto web:
 
-1. Usuario promedio que espera que se le recomiende contenido según sus sentimientos, personalidad y estado de ánimo acorde en cada momento, sin tener que conocer nada sobre géneros cinematográficos.
+1. Usuario promedio que espera que se le recomienden enlaces a películas, series, música y libros según sus sentimientos, personalidad y estado de ánimo acorde en cada momento, como resultado de contestar preguntas simples, sencillas y sin vocabulario técnico, en el mismo portal en el que está contestando preguntas.
 2. Productoras de cine interesadas en perfiles reales y sinceros de usuarios ya que actualmente la gente ve principalmente lo que está de moda y se vuelve más complicado producir contenido que guste y no sea monótono. De esta forma podrían saber que es lo más demandado geográfica y temporalmente.
 3. Servicios interesados en conseguir visitas gracias a aparecer su plataforma como recomendada cuando se calcule el contenido para los usuarios finales.
 
@@ -33,6 +33,11 @@ Si expresamos las conclusiones anteriores en forma de HUs, nos quedaría de la s
 
 ## Productos Finales que se entregarán
 
-1. [[M1]](https://github.com/migueorg/SearchCulture/milestone/1) Portal capaz de recomendar el contenido adecuado basandose solo en preguntas al usuario sobre su forma de pensar, actuar, sentimientos actuales, y preguntas de índole general, sin preguntas técnicas.
-2. [[M2]](https://github.com/migueorg/SearchCulture/milestone/5) Funcionalidad que interprete los datos recopilados.
-3. [[M3]](https://github.com/migueorg/SearchCulture/milestone/4) Enlaces por defecto de los resultados usando el servicio proveedor interesado.
+
+1. [[M1]](https://github.com/migueorg/SearchCulture/milestone/6) Módulo de pregunta y recolecta de datos: Base inicial del proyecto, que realizará las preguntas y almacenará los datos que el usuario proporcione.
+
+2. [[M2]](https://github.com/migueorg/SearchCulture/milestone/7) Módulo de procesado de datos: Calculará los porcentajes y ponderaciones de cada respuesta, en busca de resultados acertados usando algoritmos de clustering o similares.
+   
+3. [[M3]](https://github.com/migueorg/SearchCulture/milestone/8) Sistema de respuesta: Devolverá los resultados que haya obtenido del módulo de cálculo y procesado. Buscará el enlace de dicho resultado en el sistema distribuidor de contenido asociado.
+
+4. [[M4]](https://github.com/migueorg/SearchCulture/milestone/9) Módulo Estadístico Proporcionará un análisis estadístico sencillo (solo a las empresas clientes, nunca a los usuarios finales) de los datos recopilados a los usuarios finales.
