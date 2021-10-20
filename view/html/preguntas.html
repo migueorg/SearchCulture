@@ -1,0 +1,25 @@
+<!doctype html>
+
+<html lang='es'>
+  <head>
+    <meta charset='utf-8'>
+    <title>SearchCulture</title>
+    <link rel='stylesheet' href='../css/neat.css'>
+  </head>
+  <body>
+    <div>
+      <h2>Preguntas</h2>
+      <form action='{{action}}' method='POST'>
+        {% for p in preguntas %}
+          {% set i = loop.index %}
+          <p>{{p[1]}}</p>
+          {% for alt in p[2]%}
+            <input type='{{p[0]}}' id='{{i}}{{loop.index}}' value='{{alt}}' name='{{p[1]}}'>
+            <label for="{{i}}{{loop.index}}">{{alt}}</label><br>
+          {% endfor %}
+        {% endfor %}
+        <input type='submit' value='Enviar'>
+      </form>
+    </div>
+  </body>
+</html>
