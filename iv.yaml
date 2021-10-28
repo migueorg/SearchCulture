@@ -1,2 +1,2 @@
 lenguaje: python
-entidad: model/to_csv.py
+entidad: src/usuario.py
