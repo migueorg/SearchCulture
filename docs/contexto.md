@@ -41,3 +41,11 @@ Si expresamos las conclusiones anteriores en forma de HUs, nos quedaría de la s
 3. [[M3]](https://github.com/migueorg/SearchCulture/milestone/8) Sistema de respuesta: Devolverá los resultados que haya obtenido del módulo de cálculo y procesado. Buscará el enlace de dicho resultado en el sistema distribuidor de contenido asociado.
 
 4. [[M4]](https://github.com/migueorg/SearchCulture/milestone/9) Módulo Estadístico Proporcionará un análisis estadístico sencillo (solo a las empresas clientes, nunca a los usuarios finales) de los datos recopilados a los usuarios finales.
+
+## ¿Cómo funciona?
+
+El proyecto lanzará preguntas sobre el estado de ánimo actual, sobre como se siente al realizar determinadas tareas, como reaccionaría a ciertos eventos, y lo que le transmiten algunas supuestas escenas. (La mayoría de preguntas serán de escenas o tópicos sacados de películas. Otras preguntadas serán seleccionadas por las empresas cliente). 
+
+Sobre esas respuestas se sacará un conteo de veces que ha dicho "bien", "mal", "no se", "alegría", "miedo", etc. A las cuales se les dará una determinada ponderación del tipo: "Si a las preguntas sobre la temática X se le han asignado 4 veces "bien" o "alegría" y 1 vez "mal", "miedo", determinamos que el genero Acción le puede gustar en un 80%". Para esto por ejemplo se podría usar un [analizador léxico](http://www.dabeaz.com/ply/) para evaluar estas cadenas, o una simple ponderación por cada repetición de ciertas palabras clave o sus símiles. 
+
+Tras esto, sabremos que géneros cinematográficos son los que generan más rechazo o más interés a ese usuario. Por tanto, usando los resultados sobre el % de cada género, mediante un [algoritmo de clasificación](https://en.wikipedia.org/wiki/Statistical_classification) se recomendará contenido que cumpla esos generos. 
