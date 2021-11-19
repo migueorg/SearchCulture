@@ -42,7 +42,7 @@ Si expresamos las conclusiones anteriores en forma de HUs, nos quedaría de la s
 
 4. [[M4]](https://github.com/migueorg/SearchCulture/milestone/9) Módulo Estadístico Proporcionará un análisis estadístico sencillo (solo a las empresas clientes, nunca a los usuarios finales) de los datos recopilados a los usuarios finales.
 
-## ¿Cómo funciona?
+## ¿Cómo funciona? 
 
 El proyecto lanzará preguntas sobre el estado de ánimo actual, sobre como se siente al realizar determinadas tareas, como reaccionaría a ciertos eventos, y lo que le transmiten algunas supuestas escenas. (La mayoría de preguntas serán de escenas o tópicos sacados de películas. Otras preguntadas serán seleccionadas por las empresas cliente). 
 
