@@ -19,7 +19,7 @@ Por tanto vemos usuarios modelo como:
 Del texto anterior podemos sacar tres tipos de usuarios interesados en este proyecto web:
 
 1. Usuario promedio que espera que se le recomienden enlaces a películas, series, música y libros según sus sentimientos, personalidad y estado de ánimo acorde en cada momento, como resultado de contestar preguntas simples, sencillas y sin vocabulario técnico, en el mismo portal en el que está contestando preguntas.
-2. Productoras de cine interesadas en perfiles reales y sinceros de usuarios ya que actualmente la gente ve principalmente lo que está de moda y se vuelve más complicado producir contenido que guste y no sea monótono. De esta forma podrían saber que es lo más demandado geográfica y temporalmente.
+2. Productoras de cine interesadas en perfiles reales y sinceros de usuarios ya que actualmente la gente ve principalmente lo que está de moda y se vuelve más complicado producir contenido que guste y no sea monótono. De esta forma podrían saber que es lo más demandado **geográfica** y **temporalmente**.
 3. Servicios interesados en conseguir visitas gracias a aparecer su plataforma como recomendada cuando se calcule el contenido para los usuarios finales.
 
 ## Traduciendo a HU
