@@ -1,5 +1,6 @@
 from datetime import datetime
 from collections import Counter
+import itertools
 
 
 class Usuario:
@@ -7,6 +8,8 @@ class Usuario:
 
     Atributos
     ---------
+    id : int
+        Identificador único del usuario.
     alta : datetime
         Fecha de alta del usuario en la aplicación.
     region : str
@@ -17,7 +20,9 @@ class Usuario:
         Frecuencia absoluta de cada palabra usada por el usuario.
     """
 
-    def __init__(self, alta, region, intereses, palabras):
+    id_iter = itertools.count()
+
+    def __init__(self, alta=datetime.now(), region, intereses, palabras):
         """Constructor de la clase Usuario.
 
         Parámetros
@@ -32,6 +37,7 @@ class Usuario:
             Lista de palabras usadas por el usuario.
         """
 
+        self.id = next(Usuario.id_iter)
         self.alta = alta
         self.region = region
         self.intereses = intereses   
