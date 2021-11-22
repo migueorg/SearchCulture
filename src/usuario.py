@@ -7,8 +7,6 @@ class Usuario:
 
     Atributos
     ---------
-    tipo : int
-        Tipo de usuario.
     alta : datetime
         Fecha de alta del usuario en la aplicación.
     region : str
@@ -19,13 +17,11 @@ class Usuario:
         Frecuencia absoluta de cada palabra usada por el usuario.
     """
 
-    def __init__(self, tipo, alta, region, intereses, palabras):
+    def __init__(self, alta, region, intereses, palabras):
         """Constructor de la clase Usuario.
 
         Parámetros
         ----------
-        tipo : int
-            Tipo de usuario.
         alta : datetime
             Fecha de alta del usuario en la aplicación.
         region : str
@@ -36,7 +32,6 @@ class Usuario:
             Lista de palabras usadas por el usuario.
         """
 
-        self.tipo = tipo
         self.alta = alta
         self.region = region
         self.intereses = intereses   
