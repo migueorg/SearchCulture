@@ -8,8 +8,6 @@ class Pregunta:
     ---------
     id : int
         Identificador único.
-    tipo : str
-        Tipo de pregunta.
     pregunta : str
         Pregunta.
     respuestas : list[str]
@@ -18,13 +16,11 @@ class Pregunta:
 
     id_iter = itertools.count()
     
-    def __init__(self, tipo, pregunta, respuestas):
+    def __init__(self, pregunta, respuestas):
         """Constructor de la clase Pregunta.
 
         Parámetros
         ----------
-        tipo : str
-            Tipo de pregunta.
         pregunta : str
             Pregunta.
         respuestas : list[str]
@@ -32,6 +28,5 @@ class Pregunta:
         """
 
         self.id = next(Pregunta.id_iter)
-        self.tipo = tipo
         self.pregunta = pregunta
         self.respuestas = respuestas
