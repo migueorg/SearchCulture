@@ -17,7 +17,7 @@ class Respuesta:
     """
 
     def _init_(self, id_usuario, id_pregunta, respuesta):
-        """Constructor de la clase Pregunta.
+        """Constructor de la clase Respuesta.
 
         Parámetros
         ----------
