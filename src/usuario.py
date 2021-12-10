@@ -22,7 +22,7 @@ class Usuario:
 
     id_iter = itertools.count()
 
-    def __init__(self, alta=datetime.now(), region, intereses, palabras):
+    def __init__(self, alta, region, intereses, palabras):
         """Constructor de la clase Usuario.
 
         Parámetros
@@ -37,6 +37,7 @@ class Usuario:
             Lista de palabras usadas por el usuario.
         """
 
+        alta = datetime.now()
         self.id = next(Usuario.id_iter)
         self.alta = alta
         self.region = region
