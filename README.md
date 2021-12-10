@@ -9,3 +9,11 @@ Proyecto en la nube que será capaz de recomendar contenido (Películas, Series,
 ## User Journey:airplane: e Historias de Usuario: Disponible en [docs/contexto.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/contexto.md) 
 
 ## Otra documentación secundaria: [docs/wiki.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/wiki.md) :file_folder:
+
+## Automatización:
+
+Como Task Runner se ha optado por usar [PyDoit](https://pydoit.org/). Puedes ver su proceso de elección [aquí](https://github.com/migueorg/SearchCulture/blob/Objetivo-3/docs/taskrunner_choice.md).
+
+### Instalación Pydoit
+Para poder usar Pydoit es necesaria su instalación a traves de pip (por lo que Python y pip son necesarios y se da por hecho que están instalados).
+> $ pip3 install doit
