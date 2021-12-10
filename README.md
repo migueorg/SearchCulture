@@ -17,3 +17,21 @@ Como Task Runner se ha optado por usar [PyDoit](https://pydoit.org/). Puedes ver
 ### Instalación Pydoit
 Para poder usar Pydoit es necesaria su instalación a traves de pip (por lo que Python y pip son necesarios y se da por hecho que están instalados).
 > $ pip3 install doit
+
+### Órdenes disponibles en Pydoit
+
+#### Listar Tareas
+Mostrará una lista con las tareas programadas en dodo.py
+> doit list
+
+#### Instala dependencias
+Instalará las dependencias necesarias para ejecutar el proyecto
+> doit xxxx
+
+#### Ejecuta el proyecto
+Lanza todas las órdenes necesarias para que el proyecto se ejecute
+> doit xxxx
+
+#### Comprobar sintaxis
+Comprueba si la sintaxis está correcta
+> doit xxxx
