@@ -12,26 +12,26 @@ Proyecto en la nube que será capaz de recomendar contenido (Películas, Series,
 
 ## Automatización:
 
-Como Task Runner se ha optado por usar [PyDoit](https://pydoit.org/). Puedes ver su proceso de elección [aquí](https://github.com/migueorg/SearchCulture/blob/Objetivo-3/docs/taskrunner_choice.md).
+Como Task Runner se ha optado por usar [pypyr](https://github.com/pypyr/pypyr). Puedes ver su proceso de elección [aquí](https://github.com/migueorg/SearchCulture/blob/Objetivo-3/docs/taskrunner_choice.md).
 
-### Instalación Pydoit
-Para poder usar Pydoit es necesaria su instalación a traves de pip (por lo que Python y pip son necesarios y se da por hecho que están instalados).
-> $ pip3 install doit
+### Instalación pypyr
+Para poder usar pypyr es necesaria su instalación a traves de pip (por lo que Python y pip son necesarios y se da por hecho que están instalados).
+> $ pip3 install --user pypyr
 
-### Órdenes disponibles en Pydoit
+### Órdenes disponibles en pypyr
 
 #### Listar Tareas
-Mostrará una lista con las tareas programadas en dodo.py
-> doit list
+Mostrará una lista con las tareas programadas en 
+> pypyr task list
 
 #### Instala dependencias
 Instalará las dependencias necesarias para ejecutar el proyecto
-> doit xxxx
+> pypyr task xxxx
 
 #### Ejecuta el proyecto
 Lanza todas las órdenes necesarias para que el proyecto se ejecute
-> doit xxxx
+> pypyr task xxxx
 
 #### Comprobar sintaxis
 Comprueba si la sintaxis está correcta
-> doit xxxx
+> pypyr task xxxx
