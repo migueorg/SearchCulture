@@ -35,3 +35,7 @@ Lanza todas las órdenes necesarias para que el proyecto se ejecute
 #### Comprobar sintaxis
 Comprueba si la sintaxis está correcta
 > pypyr task check
+
+#### Ejecutar los test (Soon...)
+Ejecuta los test programados
+> pypyr task test

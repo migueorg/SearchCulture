@@ -1,2 +1,5 @@
 lenguaje: python
 entidad: src/usuario.py
+automatizar:
+  fichero: task.yaml
+  orden: pypyr task
