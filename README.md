@@ -26,12 +26,12 @@ Mostrará una lista con las tareas programadas en
 
 #### Instala dependencias
 Instalará las dependencias necesarias para ejecutar el proyecto
-> pypyr task xxxx
+> pypyr task installdeps
 
 #### Ejecuta el proyecto
 Lanza todas las órdenes necesarias para que el proyecto se ejecute
-> pypyr task xxxx
+> pypyr task run
 
 #### Comprobar sintaxis
 Comprueba si la sintaxis está correcta
-> pypyr task xxxx
+> pypyr task check
