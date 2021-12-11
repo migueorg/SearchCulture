@@ -1,0 +1,64 @@
+context_parser: pypyr.parser.keys
+steps:
+  - name: pypyr.steps.default
+    comment: set default values for optional cli inputs
+    in:
+      defaults:
+        list: False
+        installdeps: False
+        check: False
+        run: False
+
+  - name: pypyr.steps.cmd
+    run: '{installdeps}'
+    in:
+      cmd: pip3 install --user pyflakes
+
+  - name: pypyr.steps.echo
+    run: '{list}'
+    in:
+      echoMe: list - Muestra esta lista
+
+  - name: pypyr.steps.echo
+    run: '{list}'
+    in:
+      echoMe: run - Ejecuta el proyecto
+
+  - name: pypyr.steps.echo
+    run: '{list}'
+    in:
+      echoMe: check - Comprueba la sintaxis de los archivos sin llegar a compilar
+
+  - name: pypyr.steps.echo
+    run: '{list}'
+    in:
+      echoMe: installdeps - Instala las dependencias necesarias
+
+  - name: pypyr.steps.cmd
+    run: '{check}'
+    in:
+      cmd: pyflakes src/pregunta.py
+    swallow: True
+
+  - name: pypyr.steps.cmd
+    run: '{check}'
+    in:
+      cmd: pyflakes src/respuesta.py
+    swallow: True
+
+  - name: pypyr.steps.cmd
+    run: '{check}'
+    in:
+      cmd: pyflakes src/usuario.py
+    swallow: True
+
+  - name: pypyr.steps.cmd
+    run: '{check}'
+    in:
+      cmd: pyflakes src/to_csv.py
+    swallow: True
+
+  - name: pypyr.steps.cmd
+    run: '{run}'
+    in:
+      cmd: python3 src/usuario.py
