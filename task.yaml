@@ -12,7 +12,7 @@ steps:
   - name: pypyr.steps.cmd
     run: '{installdeps}'
     in:
-      cmd: pip3 install --user pyflakes
+      cmd: echo 'Ninguna dependencia de momento'
 
   - name: pypyr.steps.echo
     run: '{list}'
@@ -37,25 +37,25 @@ steps:
   - name: pypyr.steps.cmd
     run: '{check}'
     in:
-      cmd: pyflakes src/pregunta.py
+      cmd: python3 -m py_compile src/pregunta.py
     swallow: True
 
   - name: pypyr.steps.cmd
     run: '{check}'
     in:
-      cmd: pyflakes src/respuesta.py
+      cmd: python3 -m py_compile src/respuesta.py
     swallow: True
 
   - name: pypyr.steps.cmd
     run: '{check}'
     in:
-      cmd: pyflakes src/usuario.py
+      cmd: python3 -m py_compile src/usuario.py
     swallow: True
 
   - name: pypyr.steps.cmd
     run: '{check}'
     in:
-      cmd: pyflakes src/to_csv.py
+      cmd: python3 -m py_compile src/to_csv.py
     swallow: True
 
   - name: pypyr.steps.cmd
