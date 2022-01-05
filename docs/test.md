@@ -79,3 +79,14 @@ Las bibliotecas de aserciones que he encontrado tras varias búsquedas han sido:
 Tras el análisis la única biblioteca que cumple todos los requisitos es AssertPy. Por lo que esa es la elegida para el proyecto.
 
 Comentar que de no ser por la sensación de abandono que tiene Grappa, la opción elegida habría sido Grappa pues a nivel de sintaxis es más intuitivo.
+***
+
+# Principios F.I.R.S.T.
+
+FIRST es el acrónimo de las cinco características que deben tener nuestros tests unitarios para ser considerados tests con calidad:
+
+- [x] Fast (rápido):
+- [x] Independent (independiente):
+- [x] Repeatable (repetible):
+- [x] Self-validating (auto evaluable):
+- [x] Timely (oportuno):
