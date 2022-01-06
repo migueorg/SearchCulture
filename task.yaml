@@ -12,7 +12,12 @@ steps:
   - name: pypyr.steps.cmd
     run: '{installdeps}'
     in:
-      cmd: echo 'Ninguna dependencia de momento'
+      cmd: echo 'pip3 install -U assertpy==1.1'
+
+  - name: pypyr.steps.cmd
+    run: '{installdeps}'
+    in:
+      cmd: echo 'pip3 install -U pytest==6.2.5'
 
   - name: pypyr.steps.echo
     run: '{list}'
