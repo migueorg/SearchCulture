@@ -13,17 +13,17 @@ steps:
   - name: pypyr.steps.cmd
     run: '{test}'
     in:
-      cmd: echo 'python3 -m pytest'
+      cmd: python3 -m pytest
 
   - name: pypyr.steps.cmd
     run: '{installdeps}'
     in:
-      cmd: echo 'pip3 install -U assertpy==1.1'
+      cmd: pip3 install -U assertpy==1.1
 
   - name: pypyr.steps.cmd
     run: '{installdeps}'
     in:
-      cmd: echo 'pip3 install -U pytest==6.2.5'
+      cmd: pip3 install -U pytest==6.2.5
 
   - name: pypyr.steps.echo
     run: '{list}'
