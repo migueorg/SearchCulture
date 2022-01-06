@@ -3,3 +3,4 @@ entidad: src/usuario.py
 automatizar:
   fichero: task.yaml
   orden: pypyr task
+test: test/test_respuesta.py
