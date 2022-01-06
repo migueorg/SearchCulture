@@ -33,3 +33,16 @@ class Respuesta:
         self.id_pregunta = id_pregunta
         self.fecha = datetime.now()
         self.respuesta = respuesta
+
+    def descompone_respuesta(respuesta):
+        """Extrae en una lista cada palabra de una respuesta
+        
+        Parámetros
+        ---------
+        respuesta : str
+            string con la respuesta dada por el usuario.
+        """
+
+        palabras = respuesta.split()
+
+        return palabras
