@@ -46,3 +46,22 @@ class Respuesta:
         palabras = respuesta.split()
 
         return palabras
+
+    def almacena_palabras(palabras):
+        """Guarda en un diccionario la palabras de la lista, 
+        acompañado del número de apariciones que tiene cada una.
+
+        Parámetros
+        ---------
+        palabras : list[str]
+            Respuesta previamente descompuesta.
+        """
+        diccionario = {}
+
+        for palabra in palabras:
+            if palabra in diccionario:
+                diccionario[palabra] += 1
+            else: 
+                diccionario[palabra] = 0
+
+        return diccionario
