@@ -16,7 +16,7 @@ class Respuesta:
         Respuesta del usuario a la pregunta.
     """
 
-    def _init_(self, id_usuario, id_pregunta, respuesta):
+    def __init__(self, id_usuario, id_pregunta, respuesta):
         """Constructor de la clase Respuesta.
 
         Parámetros
@@ -35,7 +35,7 @@ class Respuesta:
         self.respuesta = respuesta
         self.palabras = ""
 
-    def descompone_respuesta(self, respuesta):
+    def descompone_respuesta2(self, respuesta):
         """Extrae en una lista cada palabra de una respuesta
         
         Parámetros
@@ -49,7 +49,7 @@ class Respuesta:
     def descompone_respuesta(self):
         """Extrae en una lista cada palabra de una respuesta"""
 
-        return self.descompone_respuesta(self.respuesta)
+        return self.descompone_respuesta2(self.respuesta)
 
     def get_palabras(self):
         """Devuelve el atributo palabras"""
