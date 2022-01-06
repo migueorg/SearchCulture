@@ -7,7 +7,13 @@ steps:
         list: False
         installdeps: False
         check: False
+        test: False
         run: False
+
+  - name: pypyr.steps.cmd
+    run: '{test}'
+    in:
+      cmd: echo 'python3 -m pytest'
 
   - name: pypyr.steps.cmd
     run: '{installdeps}'
