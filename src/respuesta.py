@@ -34,6 +34,7 @@ class Respuesta:
         self.fecha = datetime.now()
         self.respuesta = respuesta
         self.palabras = ""
+        self.diccionario = {}
 
     def descompone_respuesta2(self, respuesta):
         """Extrae en una lista cada palabra de una respuesta
@@ -76,21 +77,23 @@ class Respuesta:
         return self.respuesta
 
 
-    def almacena_palabras(palabras):
+    def almacena_palabras(self):
         """Guarda en un diccionario la palabras de la lista, 
-        acompañado del número de apariciones que tiene cada una.
-
-        Parámetros
-        ---------
-        palabras : list[str]
-            Respuesta previamente descompuesta.
-        """
+        acompañado del número de apariciones que tiene cada una."""
         diccionario = {}
 
-        for palabra in palabras:
+        for palabra in self.palabras:
             if palabra in diccionario:
                 diccionario[palabra] += 1
             else: 
-                diccionario[palabra] = 0
+                diccionario[palabra] = 1
 
-        return diccionario
+        self.diccionario = diccionario
+
+    def get_diccionario(self):
+        """Devuelve el diccionario con las palabras de la 
+        respuesta y el número de veces que aparecen"""
+
+        self.descompone_respuesta()
+        self.almacena_palabras()
+        return self.diccionario
