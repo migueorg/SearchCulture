@@ -24,3 +24,10 @@ def test_descompone_respuesta():
     assert_that(palabras).is_length(7)
     assert_that(palabras).is_equal_to(['Si', 'que', 'me', 'parece', 'muy', 'muy', 'bien'])
 
+#Comprueba que el almacenaje de las palabras de la respuesta en forma de diccionario funciona correctamente
+def test_almacena_palabras():
+    respuesta = "Si que me parece muy muy bien"
+    diccionario_manual = {'Si': 1, 'que': 1, 'me': 1, 'parece': 1, 'muy': 2, 'bien': 1}
+    resp = Respuesta(0,0,respuesta)
+
+    assert_that(resp.get_diccionario()).is_equal_to(diccionario_manual)
