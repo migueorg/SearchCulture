@@ -33,8 +33,9 @@ class Respuesta:
         self.id_pregunta = id_pregunta
         self.fecha = datetime.now()
         self.respuesta = respuesta
+        self.palabras = ""
 
-    def descompone_respuesta(respuesta):
+    def descompone_respuesta(self, respuesta):
         """Extrae en una lista cada palabra de una respuesta
         
         Parámetros
@@ -43,9 +44,20 @@ class Respuesta:
             string con la respuesta dada por el usuario.
         """
 
-        palabras = respuesta.split()
+        self.palabras = respuesta.split()
 
-        return palabras
+    def descompone_respuesta(self):
+        """Extrae en una lista cada palabra de una respuesta"""
+
+        return self.descompone_respuesta(self.respuesta)
+
+    def get_palabras(self):
+        """Devuelve el atributo palabras"""
+
+        self.descompone_respuesta()
+        return self.palabras
+
+
 
     def almacena_palabras(palabras):
         """Guarda en un diccionario la palabras de la lista, 
