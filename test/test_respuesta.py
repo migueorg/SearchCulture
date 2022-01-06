@@ -14,4 +14,13 @@ def test_respuesta():
     assert_that(resp.get_id_pregunta()).is_equal_to(id_pregunta)
     assert_that(resp.get_respuesta()).is_equal_to(respuesta)
 
+#Comprueba que la descomposición de respuesta a subcadenas de palabras se hace correctamente
+def test_descompone_respuesta():
+    respuesta = "Si que me parece muy muy bien"
+    resp = Respuesta(0,0,respuesta)
+
+    palabras = resp.get_palabras()
+
+    assert_that(palabras).is_length(7)
+    assert_that(palabras).is_equal_to(['Si', 'que', 'me', 'parece', 'muy', 'muy', 'bien'])
 
