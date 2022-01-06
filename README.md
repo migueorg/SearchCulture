@@ -10,6 +10,7 @@ Proyecto en la nube que será capaz de recomendar contenido (Películas, Series,
 
 ## Otra documentación secundaria: [docs/wiki.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/wiki.md) :file_folder:
 
+***
 ## Automatización:
 
 Como Task Runner se ha optado por usar [pypyr](https://github.com/pypyr/pypyr). Puedes ver su proceso de elección [aquí](https://github.com/migueorg/SearchCulture/blob/Objetivo-3/docs/taskrunner_choice.md).
@@ -39,3 +40,7 @@ Comprueba si la sintaxis está correcta
 #### Ejecutar los test (Soon...)
 Ejecuta los test programados
 > pypyr task test
+
+***
+## Test Unitarios:
+Para ejecutar los test unitarios se ha elegido [Pytest](https://github.com/pytest-dev/pytest) como marco de ejecución y [AssertPy](https://github.com/assertpy/assertpy) como biblioteca de aserciones. Puedes consultar el extenso análisis y proceso de selección, así como los criterios que se han usado para el mismo en [docs/test.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-4/docs/test.md)
