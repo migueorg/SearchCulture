@@ -85,8 +85,10 @@ Comentar que de no ser por la sensación de abandono que tiene Grappa, la opció
 
 FIRST es el acrónimo de las cinco características que deben tener nuestros tests unitarios para ser considerados tests con calidad:
 
-- [x] Fast (rápido):
-- [x] Independent (independiente):
-- [x] Repeatable (repetible):
-- [x] Self-validating (auto evaluable):
-- [x] Timely (oportuno):
+- [x] Fast (rápido): Esta característica se cumple pues los test se pasan en 0.02s 
+  ![Prueba ejecución test](/docs/imgs/ejecucion_test.png)
+- [x] Independent (independiente): Se cumple porque para los 3 test se crea un objeto Respuesta nuevo e independiente que no depende del anterior.
+
+- [x] Repeatable (repetible): También se cumple pues no tienen dependencias de servidores externos ni de información de terceros. Toda la información necesaria viene implementada en los propios test.
+- [x] Self-validating (auto evaluable): Se ejecutan automáticamente al lanzar la tarea de test en el task runner y expresan el resultado válido o inválido al terminar los mismos.
+- [x] Timely (oportuno): Los test se han pensado antes que el desarrollo del código. Aunque no se vea reflejado en el orden de los commits, el desarollo si que ha cumplido dicho principio, pues el código se ha hecho pensando en pasar los test previamente establecidos.
