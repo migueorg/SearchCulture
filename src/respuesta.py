@@ -57,6 +57,23 @@ class Respuesta:
         self.descompone_respuesta()
         return self.palabras
 
+    def get_id_usuario(self):
+        """Getter del atributo id_usuario.
+        Corresponde con el usuario que hizo la respuesta."""
+
+        return self.id_usuario
+
+    def get_id_pregunta(self):
+        """Getter del atributo id_pregunta.
+        Corresponde con la pregunta que se está contestando."""
+
+        return self.id_pregunta
+    
+    def get_respuesta(self):
+        """Getter del atributo respuesta.
+        Corresponde con lo que se haya contestado a la pregunta."""
+
+        return self.respuesta
 
 
     def almacena_palabras(palabras):
