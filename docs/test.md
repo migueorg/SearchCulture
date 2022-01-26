@@ -11,11 +11,6 @@
 
 ### Opciones Existentes
 Los test runners que he encontrado para Python han sido los siguientes:
-- [unittest](https://github.com/python/cpython/tree/main/Lib/unittest)
-  - [x] Cumple una comunidad activa pues forma parte de la comunidad oficial de Python. Aunque esto puede ser una desventaja pues el equipo no se dedica exclusivamente a esto sino a Python en general.
-  - [ ] No tiene una salida muy amigable, es concreta, pero en algunos casos puede generar rechazo por su sintaxis u organización de la misma. Otras alternativas son más claras. Por tanto, no cumple este punto.
-  - [x] Tiene una documentación bastante concisa, con ejemplos concretos junto con la salida a esperar, unos primeros pasos bastante sencillos y completa, por lo que cumple el requisito de documentación.
-  - [x] Al disponer de una documentación y comunidad abundante, así como de librería de aserciones propia, la curva de dificultad inicial es bastante sencilla y rápida. Por lo que si cumple este requisito.
 - [Pytest](https://github.com/pytest-dev/pytest) (antiguo [Testify](https://github.com/Yelp/Testify))
   - [x] Cumple con una comunidad activa. De hecho al ser uno de los más conocidos, tiene una gran actividad tanto en issues como en PR, y en medida de lo posible por el gran volumen, se ve como contestan con rapidez y los atienden. Además, también tienen una gran cantidad de commits, todos con bastante frecuencia, y el equipo de desarrollo no está compuesto o mantenido por una sola persona.
   - [x] Dispone de una salida bastante fácil de comprender y rápida de detectar el error, resaltando la línea que provoca el fallo y el motivo de una forma ordenada e intuitiva, por lo que sí que cumple este requisito.
@@ -39,9 +34,9 @@ Los test runners que he encontrado para Python han sido los siguientes:
 
 
 ### Conclusión 
-Tras el análisis de las alternativas encontradas, las herramientas que cumplen más criterios de los que busco son Unittest y Pytest. Ambos cumplen el mismo número de requisitos, pero no los mismos. Por lo que tengo que decidir si priorizar el tener una salida e informe de resultados mejor frente a una documentación mejor estructurada y completa.
+Tras un correcto análisis de los posibles test runners encontrados, vemos que pocos de ellos cumplen varios de los requisitos establecidos, siendo Pytest el que más cumple de todos, por lo que ha sido el elegido finalmente a pesar de no cumplir el 100% de los requisitos.
 
-Debido a que este es un proyecto simple y pequeño, con el fin de priorizar una salida más elegante frente a la documentación más concisa y densa, se optará por Pytest. Ya que para el uso que se va a hacer, la documentación de Pytest es más que correcta.
+Adicionalmente aún así, a pesar de no haber pasado el requisito de tener una documentación bien organizada o con suficientes ejemplos, para el uso que se va a utilizar en este proyecto, es más que suficiente.
 
 --- 
 
@@ -71,7 +66,7 @@ Las bibliotecas de aserciones que he encontrado tras varias búsquedas han sido:
   - [ ] No tiene actividad desde noviembre de 2020 por lo que no cumple con una comunidad activa. Además, en los últimos issues uno de los owners comentó que estaba bastante ocupado y que no podía atenderlo en ese momento, dejando el trabajo para otro de los miembros.
   - [x] A pesar de no tener una documentación demasiado buena en comparación con otras, sí que es muy concisa y concreta, tiene ejemplos muy bien seleccionados y claros, siendo de gran utilidad para este proyecto.
 - [unittest](https://github.com/python/cpython/tree/main/Lib/unittest)
-  - [ ] No cumple el requisito pues tiene una sintaxis bastante arcaica, obsoleta, repetitiva y poco natural, haciendo que sea liosa.
+  - [ ] No cumple el requisito pues tiene una sintaxis bastante arcaica, obsoleta, repetitiva y poco natural, haciendo que sea liosa. (En comparación con el resto de librerías de aserciones enfocadas con una sintaxis más natural y humana)
   - [x] Tiene una comunidad activa pues lo mantiene el propio equipo de Python al ser una parte del mismo, aunque eso a su vez hace que cueste encontrar como buscar algún PR o issue que hable de esta biblioteca de aserciones.
   - [x] Sí que tiene una documentación bastante explicita y con ejemplos, además al ser tan popular y conocida, hay una cantidad muy grande de páginas con ejemplos y tutoriales de terceros, etc.
 ### Conclusión 
