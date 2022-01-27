@@ -92,3 +92,10 @@ FIRST es el acrónimo de las cinco características que deben tener nuestros tes
 - [x] Repeatable (repetible): También se cumple pues no tienen dependencias de servidores externos ni de información de terceros. Toda la información necesaria viene implementada en los propios test.
 - [x] Self-validating (auto evaluable): Se ejecutan automáticamente al lanzar la tarea de test en el task runner y expresan el resultado válido o inválido al terminar los mismos.
 - [x] Timely (oportuno): Los test se han pensado antes que el desarrollo del código. Aunque no se vea reflejado en el orden de los commits, el desarollo si que ha cumplido dicho principio, pues el código se ha hecho pensando en pasar los test previamente establecidos.
+
+***
+# Aclaración sucedido con unittest
+
+En la revisión anterior tuve un desliz relacionado con unittest, ya que lo había clasificado como test runner y como librería de aserciones a la vez. Esto fue debido a que en la documentación oficial y en múltiples sitios que hablan de unittest, lo denominan como un [framework de unit testing](https://docs.python.org/3/library/unittest.html#module-unittest), y destacan la posibilidad de usar unittest para [construir y correr test](https://docs.python.org/3/library/unittest.html#basic-example). Pero efectivamente, tras la revisión y comentarios de JJ he podido cerciorarme de que unittesting NO es un test runner, a pesar de que la forma de mencionarlo y hablar de él en webs y documentación oficial sea tan abstracta, ya que realmente es una librería de aserciones con ciertos añadidos para test, por lo cual pasa a llamarse test framework. Pero esto no lo convierte en un test runner, ya que unittest NO interpreta la salida de los ficheros de testeo, ni es capaz de buscar dichos ficheros de testeo, entre otros.
+
+Por lo que tras esto, se ha eliminado unittest del proceso de selección de test runner y se ha mantenido en el de librería de aserciones.
