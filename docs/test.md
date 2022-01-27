@@ -7,6 +7,7 @@
 - Claridad en los informes de los test (se valorará la salida que nos dé al finalizar los test, la facilidad para ver que ha salido bien y que ha salido mal, etc)
 - Documentación concisa (se valorarán los ejemplos proporcionados en la documentación, organización de las secciones, la facilidad para buscar dudas o problemas, existencia de FAQ, así como utilidad de la misma)
 - Facilidad de uso (se tendrá en cuenta la curva inicial de dificultad para usar el framework, simplicidad para desplegarlo así como la complejidad para añadir los test)
+- Debe tener la posibilidad de usar fixtures, pues aunque no se vayan a usar de momento, es un añadido que en el futuro puede ser útil para poder simular contextos o situaciones específicas para testear comportamientos concretos de forma cómoda y rápida.
 
 
 ### Opciones Existentes
@@ -16,21 +17,25 @@ Los test runners que he encontrado para Python han sido los siguientes:
   - [x] Dispone de una salida bastante fácil de comprender y rápida de detectar el error, resaltando la línea que provoca el fallo y el motivo de una forma ordenada e intuitiva, por lo que sí que cumple este requisito.
   - [ ] A pesar de tener una documentación correcta, no tiene ejemplos concretos ni una forma organizada de mostrarla, así como explicaciones suficientes que acompañen a algunos de los ejemplos. Por tanto, no cumple este criterio.
   - [x] Los pasos iniciales son bastante simples y rápidos, por tanto, tiene una curva inicial bastante simple a pesar de una documentación que deja que desear, por lo que si cumple este requisito.
+  - [x] [Soporta el uso de fixtures](https://docs.pytest.org/en/latest/explanation/fixtures.html), por lo que si cumple este requsito. 
 - [Nose2](https://github.com/nose-devs/nose2) (antiguo Nose)
   - [ ] No cumple con mis criterios de tener una comunidad activa, a pesar de que su commit más reciente es de hace 2 días y no tienen muchos issues ni PR abiertos, pero realmente sus commits son de muy cuando en cuando, por lo que se aprecia que el desarrollo va por rachas y no es demasiado activo, y además de esto, solo lo mantiene activo una persona. Por lo que según lo mencionado en los criterios, no lo cumple. 
   - [ ] Como se basa en Unittest, tiene una salida casi idéntica al mismo, por lo que de igual manera no tiene una salida amigable. 
   - [ ] Tiene una mala documentación de cara a gente novata, pocos ejemplos prácticos o supuestos reales, y una muy mala organización.
   - [ ] No tiene para nada un inicio sencillo, el cual se complica por su documentación tan mal organizada y escasa. De hecho de sus primeros comentarios en la documentación es que si eres un usuario novato consideres usar pytest en su lugar.
+  - [x] [Permite el uso de fixtures](https://docs.nose2.io/en/latest/plugins/layers.html?highlight=fixtures#organizing-test-fixtures-into-layers) mediante lo que ellos llaman plugins. Por lo que si cumple este requisito. 
 - [Green](https://github.com/CleanCut/green)
   - [x] Cumple, aunque con un par de peros. Tiene +160 issues cerrados y solo 2 abiertos, de los cuales, ambos atendidos, repitiendo la misma fórmula para los PR así que por esa parte si cumple. Sin embargo, lleva sin recibir commits desde julio de 2021, es decir 6 meses desde el último commit en el momento en el que se hace el análisis, lo cual, no está del todo mal, pero además de eso el proyecto está mantenido por una única persona, cosa que no inspira mucha confianza. A pesar de estos peros, como dije al principio, cumple el requisito.
   - [x] Se basa en unittest, pero a diferencia del anterior, este trae añadidos como colorear y mostrar de una forma más clara y visible la salida de los informes, por lo que cubre el requisito a pesar de basarse en unittest.
   - [ ] Tiene la peor documentación de todas las alternativas vistas, no dispone de web dedicada para la documentación, sino que utiliza el README del repositorio para ello, siendo bastante escueta, mala y sin ejemplos. Tampoco usa la Wiki del propio repositorio, en su lugar te venden [un curso en Udemy](https://www.udemy.com/course/python-testing-with-green/), por lo que no cumple para nada este requisito.
   - [ ] Debido a la mala documentación y poca claridad de la misma, tiene unos primeros pasos bastante complicados, así que tampoco cumple este requisito.
+  - [ ] Al igual que en el requisito anterior, debido a la mala documentación que tienen, ha sido sido dificil averiguar si es compatible con fixtures, pero finalmente se ha llegado a la conclusión de que no lo es, ya que no aparece nada al respecto en su documentación visible gratuita (desconozco si en su curso de pago los mencionarán), y además un usuario en un issue [menciona que con fixtures sería facil de hacer](https://github.com/CleanCut/green/issues/60#issuecomment-112241525), de lo que deduzco que no los soportan. Por lo que no cumple este requisito
 - [Mamba](https://github.com/nestorsalceda/mamba)
   - [ ] No cumple el tener una comunidad activa, de hecho a pesar de no serlo, parece un proyecto abandonado. No tiene commits desde noviembre de 2020, y tiene una gran cantidad de PR e issues abiertos o pendientes en comparación con los cerrados.
   - [ ] A pesar de expresar de una forma adecuada el lugar en el que falla, y el tiempo de ejecución, no da una salida muy amigable o user friendly, sobre todo en comparación con el resto de alternativas, por lo que no cumple este requisito.
   - [ ] Tiene una documentación muy escasa y pobre. Sí que tiene un par de ejemplos concretos de como empezar, pero poco más. Por lo que no cumple este requisito.
   - [x] A pesar de tener una documentación mala, los primeros pasos y el cómo crear un test simple si está documentado de forma aceptable, por lo que el cómo empezar no es excesivamente complicado, cumpliendo este requisito. 
+  - [ ] No es compatible con el uso de fixtures, ya que en su documentación oficial no hay ni mención sobre como implementarlos. Por lo que no cumple este requisito.
 
 
 ### Conclusión 
