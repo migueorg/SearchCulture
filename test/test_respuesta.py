@@ -34,3 +34,11 @@ def test_almacena_palabras():
     resp = Respuesta(0,0,respuesta)
 
     assert_that(resp.get_diccionario()).is_equal_to(diccionario_manual)
+
+def test_palabra_mas_usada():
+    """Comprueba que la extracción de la palabra más usada se hace correctamente"""
+
+    respuesta = "Si que me parece muy muy bien"
+    resp = Respuesta(0,0,respuesta)
+
+    assert_that(resp.get_palabra_mas_usada()).is_equal_to("muy")
