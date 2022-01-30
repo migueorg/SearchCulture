@@ -97,3 +97,19 @@ class Respuesta:
         self.descompone_respuesta()
         self.almacena_palabras()
         return self.diccionario
+
+    def get_palabra_mas_usada(self):
+        """Devuelve la palabra más usada en la respuesta"""
+
+        diccionario = self.get_diccionario()
+
+        veces = 0
+        palabra = ''
+        for i, j in diccionario.items():
+            if veces < j:
+                veces = j
+                palabra = i
+
+        palabra_mas_usada = palabra
+
+        return palabra_mas_usada
