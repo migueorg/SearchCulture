@@ -42,3 +42,11 @@ def test_palabra_mas_usada():
     resp = Respuesta(0,0,respuesta)
 
     assert_that(resp.get_palabra_mas_usada()).is_equal_to("muy")
+
+def test_palabra_concreta():
+    """Comprueba que la extracción de una palabra concreta se hace correctamente"""
+
+    respuesta = "Si que me parece muy muy bien"
+    resp = Respuesta(0,0,respuesta)
+
+    assert_that(resp.get_palabra_concreta('parece')).is_equal_to(1)
