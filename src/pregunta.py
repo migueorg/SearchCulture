@@ -31,25 +31,25 @@ class Pregunta:
         self.pregunta = pregunta
         self.ponderaciones = ponderaciones
 
-    def get_pregunta(self):
-        """Getter del atributo pregunta.
-        Corresponde con la pregunta que se le hará al usuario."""
+    def get_pregunta(self): 
+        """Getter del atributo pregunta. 
+        Corresponde con la pregunta que se le hará al usuario.""" 
+ 
+        return self.pregunta 
 
-        return self.pregunta
+    def get_ponderaciones(self): 
+        """Getter del atributo ponderaciones. 
+        Corresponde con los valores que se tendrán en cuenta para las palabras que se respondan a esa pregunta.""" 
+ 
+        return self.ponderaciones 
 
-    def get_ponderaciones(self):
-        """Getter del atributo ponderaciones.
-        Corresponde con los valores que se tendrán en cuenta para las palabras que se respondan a esa pregunta."""
-
-        return self.ponderaciones
-
-    def get_ponderacion_concreta(self, palabra):
-        """Getter de una ponderación concreta de una palabra.
-        Corresponde con el genero equivalente de una palabra en concreto para esa pregunta."""
-
-        valor = 'None'
-
-        if palabra in self.ponderaciones:
-            valor = self.ponderaciones[palabra]
-
-        return valor
+    def get_ponderacion_concreta(self, palabra): 
+        """Getter de una ponderación concreta de una palabra. 
+        Corresponde con el genero equivalente de una palabra en concreto para esa pregunta.""" 
+ 
+        valor = 'None' 
+ 
+        if palabra in self.ponderaciones: 
+            valor = self.ponderaciones[palabra] 
+ 
+        return valor 
