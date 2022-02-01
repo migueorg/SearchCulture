@@ -85,7 +85,7 @@ Comentar que de no ser por la sensación de abandono que tiene Grappa, la opció
 
 FIRST es el acrónimo de las cinco características que deben tener nuestros tests unitarios para ser considerados tests con calidad:
 
-- [x] Fast (rápido): Esta característica se cumple pues los test se pasan en 0.02s 
+- [x] Fast (rápido): Esta característica se cumple pues los test se pasan en 0.04s 
   ![Prueba ejecución test](/docs/imgs/ejecucion_test.png)
 - [x] Independent (independiente): Se cumple porque para los 3 test se crea un objeto Respuesta nuevo e independiente que no depende del anterior.
 
