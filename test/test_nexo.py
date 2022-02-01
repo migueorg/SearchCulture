@@ -20,3 +20,20 @@ def test_nexo():
 
     assert_that(nex.get_pregunta()).is_equal_to(preg)
     assert_that(nex.get_respuesta()).is_equal_to(resp)
+
+def test_generos():
+    """Comprueba que el trabajo con los generos se hacen correctamente"""
+
+    #En futuras versiones es conveniente usar fixtures para la creación de estos objetos
+    pregunta = "¿Que te transmite el final de Titanic?"
+    ponderaciones = {'aburrimiento': 'Accion', 'pena': 'Drama', 'lastima': 'Drama', 'predecible': 'Sci-fi', 'sueño': 'Accion'}
+    preg = Pregunta(pregunta,ponderaciones)
+
+    respuesta = "Mucho aburrimiento y sueño"
+    resp = Respuesta(0,0,respuesta)
+
+    nex = Nexo(preg,resp)
+    generos_vacio = {'Accion':0.0, 'Drama':0.0, 'Comedia':0.0, 'Sci-fi':0.0}
+
+    assert_that(nex.get_generos()).is_equal_to(generos_vacio)
+    assert_that(nex.get_genero_concreto('Accion')).is_equal_to(0.0)
