@@ -113,3 +113,18 @@ class Respuesta:
         palabra_mas_usada = palabra
 
         return palabra_mas_usada
+
+    def get_palabra_concreta(self, palabra):
+        """Getter de una palabra concreta de una respuesta.
+        Corresponde con el numero de veces que se ha dicho esa palabra."""
+
+        if self.diccionario == {}:
+            self.descompone_respuesta()
+            self.almacena_palabras()
+
+        valor = 0
+
+        if palabra in self.diccionario:
+            valor = self.diccionario[palabra]
+
+        return valor
