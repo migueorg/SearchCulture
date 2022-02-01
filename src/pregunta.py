@@ -10,8 +10,8 @@ class Pregunta:
         Identificador único.
     pregunta : str
         Pregunta.
-    ponderaciones : diccionario
-        Valor de cada palabra de la respuesta
+    ponderaciones : diccionario str:str
+        Equivalente de cada palabra de la respuesta
     """
 
     id_iter = itertools.count()
@@ -23,13 +23,19 @@ class Pregunta:
         ----------
         pregunta : str
             Pregunta.
-        ponderaciones : diccionario
-            Valor de cada palabra de la respuesta
+        ponderaciones : diccionario str:str
+            Equivalente de cada palabra de la respuesta
         """
 
         self.id = next(Pregunta.id_iter)
         self.pregunta = pregunta
         self.ponderaciones = ponderaciones
+
+    def get_pregunta(self):
+        """Getter del atributo pregunta.
+        Corresponde con la pregunta que se le hará al usuario."""
+
+        return self.pregunta
 
     def get_ponderaciones(self):
         """Getter del atributo ponderaciones.
@@ -39,9 +45,9 @@ class Pregunta:
 
     def get_ponderacion_concreta(self, palabra):
         """Getter de una ponderación concreta de una palabra.
-        Corresponde con el valor de una palabra en concreto para esa pregunta."""
+        Corresponde con el genero equivalente de una palabra en concreto para esa pregunta."""
 
-        valor = 0.0
+        valor = 'None'
 
         if palabra in self.ponderaciones:
             valor = self.ponderaciones[palabra]
