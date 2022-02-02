@@ -14,7 +14,7 @@ def test_nexo():
     preg = Pregunta(pregunta,ponderaciones)
 
     respuesta = "Mucho aburrimiento y sueño"
-    resp = Respuesta(0,0,respuesta)
+    resp = Respuesta(respuesta)
 
     nex = Nexo(preg,resp)
 
@@ -30,7 +30,7 @@ def test_generos():
     preg = Pregunta(pregunta,ponderaciones)
 
     respuesta = "Mucho aburrimiento y sueño"
-    resp = Respuesta(0,0,respuesta)
+    resp = Respuesta(respuesta)
 
     nex = Nexo(preg,resp)
     generos_vacio = {'Accion':0.0, 'Drama':0.0, 'Comedia':0.0, 'Sci-fi':0.0}
@@ -47,7 +47,7 @@ def test_calculos():
     preg = Pregunta(pregunta,ponderaciones)
 
     respuesta = "Mucho aburrimiento y sueño"
-    resp = Respuesta(0,0,respuesta)
+    resp = Respuesta(respuesta)
 
     nex = Nexo(preg,resp)
     generos_vacio = {'Accion':0.0, 'Drama':0.0, 'Comedia':0.0, 'Sci-fi':0.0}

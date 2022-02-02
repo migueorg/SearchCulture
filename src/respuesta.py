@@ -1,81 +1,45 @@
-from datetime import datetime
-
-
 class Respuesta:
     """Respuesta de un usuario a una pregunta.
 
     Atributos
     --------
-    id_usuario : int
-        Identificador del usuario que responde.
-    id_pregunta : int
-        Identificador de la pregunta a la que se responde.
-    fecha : datetime
-        Fecha en la que se responde a la pregunta.
     respuesta : str
         Respuesta del usuario a la pregunta.
+    palabras : list[str]
+        Respuesta descompuesta en una lista de palabras individuales
+    diccionario : diccionario str:int
+        Coleeción de palabras que forman una respuesta almacenada junto con su número de apariciones.
     """
 
-    def __init__(self, id_usuario, id_pregunta, respuesta):
+    def __init__(self, respuesta):
         """Constructor de la clase Respuesta.
 
         Parámetros
         ----------
-        id_usuario : int
-            Identificador del usuario que responde.
-        id_pregunta : int
-            Identificador de la pregunta a la que se responde.
         respuesta: str
             Respuesta del usuario a la pregunta.
         """
 
-        self.id_usuario = id_usuario
-        self.id_pregunta = id_pregunta
-        self.fecha = datetime.now()
         self.respuesta = respuesta
         self.palabras = ""
         self.diccionario = {}
 
-    def descompone_respuesta2(self, respuesta):
-        """Extrae en una lista cada palabra de una respuesta
-        
-        Parámetros
-        ---------
-        respuesta : str
-            string con la respuesta dada por el usuario.
-        """
-
-        self.palabras = respuesta.split()
-
     def descompone_respuesta(self):
         """Extrae en una lista cada palabra de una respuesta"""
 
-        return self.descompone_respuesta2(self.respuesta)
+        self.palabras = self.respuesta.split()
 
     def get_palabras(self):
-        """Devuelve el atributo palabras"""
-
+        """Devuelve el atributo palabras (respuesta separada en palabras individuales)"""
+        
         self.descompone_respuesta()
         return self.palabras
-
-    def get_id_usuario(self):
-        """Getter del atributo id_usuario.
-        Corresponde con el usuario que hizo la respuesta."""
-
-        return self.id_usuario
-
-    def get_id_pregunta(self):
-        """Getter del atributo id_pregunta.
-        Corresponde con la pregunta que se está contestando."""
-
-        return self.id_pregunta
     
     def get_respuesta(self):
         """Getter del atributo respuesta.
         Corresponde con lo que se haya contestado a la pregunta."""
 
         return self.respuesta
-
 
     def almacena_palabras(self):
         """Guarda en un diccionario la palabras de la lista, 
