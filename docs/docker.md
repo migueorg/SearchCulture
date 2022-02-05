@@ -281,3 +281,8 @@ ENTRYPOINT ["pypyr","task","test"]
 - `WORKDIR /app/test` se cambia el directorio con el fin de utilizarlo exclusivamente como rootdir para cuando se pasen los test
 
 - `ENTRYPOINT ["pypyr","task","test"]` la orden que se ejecutará cuando se lance el contenedor.
+
+***
+## Github Action
+***
+En este caso, las condiciones que deseo que se den para que se actualice la imagen en DockerHub son o bien un **push**, o bien un **pull request**. Pero ambos siempre y cuando se haya **modificado el Dockerfile** ya que será el archivo que afecta a la imagen. 
