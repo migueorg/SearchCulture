@@ -218,3 +218,5 @@ Este resultado me sorprende bastante y en cierta parte me extraña que sea tan b
 Pero a pesar de tener tan buen resultado en vulnerabilidades, el tamaño y tiempo de construcción es significativamente mayor al de `python:3.9.10-slim`, por lo que sigo manteniendo la elección que hice anteriormente. Llegando a la conclusión final de que cualquier imagen a la que haya que instalarle dependencias extra, como puede ser python, o gcc, van a provocar que su tamaño y tiempo de construcción suban considerablemente en comparación con las imágenes oficiales de python.
 
 Remarcar que si lo que se busca es a toda costa una imagen segura sin importar tiempo de construcción ni tamaño, la mejor opción será una alpine o un SO base + python manual, viendo los resultados de este análisis.
+
+> Concusión final: Tras todas las pruebas realizadas y siguiendo los requisitos perviamente establecidos, la imagen elegida ha sido `python:3.9.10-slim`.
