@@ -220,3 +220,64 @@ Pero a pesar de tener tan buen resultado en vulnerabilidades, el tamaño y tiemp
 Remarcar que si lo que se busca es a toda costa una imagen segura sin importar tiempo de construcción ni tamaño, la mejor opción será una alpine o un SO base + python manual, viendo los resultados de este análisis.
 
 > Concusión final: Tras todas las pruebas realizadas y siguiendo los requisitos perviamente establecidos, la imagen elegida ha sido `python:3.9.10-slim`.
+
+
+***
+## Elección de Dockerfile
+***
+
+La creación del Dockerfile se ha ido siguiendo a la vez que el análisis realizado anteriormente según las necesidades que han sido requeridas a medida que el desarrollo del análisis iba avanzando, pero las explicaciones de elección de cada línea serán detalladas a continuación. Para empezar el Dockerfile final se puede encontrar [aquí](../Dockerfile) y tiene el siguiente aspecto:
+
+```md
+FROM python:3.9.10-slim
+
+#Creo el grupo y usuario testeo
+RUN groupadd testeo && useradd -ms /bin/bash -g testeo testeo
+
+#Cambia al usuario testeo
+USER testeo
+
+#Establezco un directorio en el que haré las instalaciones y copiaré el task.yaml
+WORKDIR /home/testeo
+
+#Actualizo pip pues es el instalador de paquetes que voy a usar
+RUN python -m pip install --upgrade pip
+
+#Instalo el task runner
+RUN pip3 install --user pypyr
+
+#Copio el código con las tareas del task runner
+COPY task.yaml ./
+
+#Configuro path para que encuentre pypyr
+ENV PATH=$PATH:/home/testeo/.local/bin
+
+#Instalo dependencias del proyecto
+RUN pypyr task installdeps
+
+#Cambio a un directorio exclusivo para pasar los test
+WORKDIR /app/test
+
+ENTRYPOINT ["pypyr","task","test"]
+
+```
+
+- `RUN groupadd testeo && useradd -ms /bin/bash -g testeo testeo` se hace para crear un usuario llamado testeo junto con un grupo llamado igual, (al que se le asigna después), para que sea el usuario bajo el que instalar pypyr y ejecutar python
+  
+- `USER testeo` se cambia de usuario en el Dockerfile para que a partir de ahora las instrucciones se hagan por ese usuario
+  
+- `WORKDIR /home/testeo` se establece un directorio actual sobre el que se trabaja. Realmente en todo momento hay un WORKDIR establecido, aunque no se ejecute esa orden, pues por defecto  ya se trabaja sobre uno. Además, si la ruta que le he indicado no existe, la crea, y como el usuario activo es testeo, se crearía con dicho propietario, por lo que no es necesario ni un mkdir ni un chown cuando se usa WORKDIR. Sobre esta ruta es sobre la que se harán todas las instalaciones además de ser donde se copiará el task.yaml de pypyr necesario para la tarea installdeps
+
+- `RUN python -m pip install --upgrade pip` se actualiza la versión de pip instalada, sería un similar a ejecutar apt update si fuésemos a trabajar con apt. Solo que en este caso la versión de pip también se actualiza. Esto se hace para asegurar que no nos de problemas ni warnings cuando vayamos a instalar pypyr.
+
+- `RUN pip3 install --user pypyr` se instala pypyr para poder usar la tarea de instalar dependencias y no tener que instalarlas todas a mano de esta forma. Se usa el flag --user para que se instale en el home del usuario en vez de en el directorio del sistema.
+
+- `COPY task.yaml ./` se copia adentro del contenedor el fichero task.yaml que contiene las tareas a ejecutar por el task runner, para que lo encuentre al ejecutarlo más adelante.
+
+- `ENV PATH=$PATH:/home/testeo/.local/bin` se establece el path adecuado para que al ejecutar el comando pypyr, encuentre el binario y no nos salte el mensaje de error de comando no encontrado.
+
+- `RUN pypyr task installdeps` ejecuta el task runner con la tarea de instalar las dependencias del proyecto.
+
+- `WORKDIR /app/test` se cambia el directorio con el fin de utilizarlo exclusivamente como rootdir para cuando se pasen los test
+
+- `ENTRYPOINT ["pypyr","task","test"]` la orden que se ejecutará cuando se lance el contenedor.
