@@ -19,3 +19,21 @@
 3.  Menor número de vulnerabilidades posible
 
 ***
+### Opciones Existentes
+
+Una vez establecidos los criterios de búsqueda, las opciones que encontramos y que analizaremos usando los criterios de selección son las siguientes:
+
+- Imagen SO base (Ubuntu, Debian, CentOS, etc) + instalación manual Python.
+- [Imágenes de Bitnami](https://hub.docker.com/r/bitnami/python), en concreto la que se ajusta a mis criterios de búsqueda es **bitnami/python:3.9.10 (174.85 MB)**. Tienen también bitnami/python:3.9.10-debian-10-r16 pero es la misma solo que renombrada pues tienen exactamente los mismos Image Layers (líneas que componen el Dockerfile que muestra Docker Hub). Esta organización no tiene distinción de imágenes según su tamaño por lo que no hay más que elegir.
+- [Imágenes de CircleCI](https://hub.docker.com/r/cimg/python), en concreto **cimg/python:3.9.10 (629.73 MB)**. Esta organización tiene otras variantes como 3.9.10-node y 3.9.10-browsers, las cuales quedan descartadas y no entran a esta valoración pues son imágenes que añaden contenido a la 3.9.10 de base, la de 3.9.10-node añade Node.js (innecesario para este proyecto) y la de 3.9.10-browsers añade todo lo mencionado anteriormente (incluido Node.js) y además Java y Selenium, también innecesarios.
+- [Imágenes oficiales de Python](https://hub.docker.com/_/python), las cuales se dividen a su vez en las siguientes variantes:
+  - **python:3.9.10 (324.21 MB)**
+  - **python:3.9.10-bullseye (324.21 MB)**
+  - **python:3.9.10-buster (315.23 MB)**
+  - **python:3.9.10-slim (43.97 MB)**
+  - **python:3.9.10-slim-bullseye (43.97 MB)**
+  - **python:3.9.10-slim-buster (41.56 MB)**
+  - **python:3.9.10-alpine3.15 (17.96 MB)**
+- Se han encontrado también las [imágenes de PyPy](https://hub.docker.com/_/pypy?tab=description), las cuales no sabía lo que eran pero tras una investigación he visto que PyPy es otro intérprete para Python, el cual presume de ser más rápido. Al no haber usado PyPy en el entorno de desarrollo del proyecto, no me he querido arriesgar a usarlo ahora por lo que las imágenes de PyPy han sido descartadas. 
+
+***
