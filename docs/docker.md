@@ -153,3 +153,68 @@ Este resultado me sorprendió porque indica que la slim usa como imagen base sli
 
 Efectivamente al tener tan pocas dependencias, las vulnerabilidades son mucho menores que en el resto. Por lo que saco como conclusión que si mi principal criterio fuese usar una imagen segura, sin importar tiempos de construcción ni tamaño, me quedaría con python:3.9.10-alpine3.15.
 ***
+#### Segunda fase comparativa
+Llegados a este punto he comparado las imagénes ya hechas y me he quedado con la que mejor se ajusta a mis criterios, pero todavía me queda compararla con la opción de coger una imagen base de un SO e instalarle Python manualmente.
+
+A estas alturas deduzco que el resultado no será mejor que el de la elegida hasta ahora, pues al empezar a instalar módulos y herramientas, seguramente pase algo similar a lo que ha pasado con alpine, pero partiendo de una imagen más pesada... Aún así de forma simbólica lo realizaré para contrastar más este estudio.
+
+Para elegir el SO de base cabría la opción de hacer otro estudio como el realizado hasta ahora pero cogiendo cada una de las imágenes disponibles, pero dado que no voy sobrado de tiempo, y que la opción elegida actualmente ya de por si satisface los requisitos, y que llegados a este punto estoy haciendo esta comparativa más a modo de ilustración que como alternativa real, utilizaré una cualquiera, en este caso Ubuntu por ser la distribución más usada. En concreto Ubuntu 22.04 ya que es de las más recientes y cuenta con bastante soporte y mantenimiento.
+
+El Dockerfile quedaría de la siguiente manera:
+
+```python
+FROM ubuntu:22.04
+
+#Para que el gestor de paquetes apt no espere que interacción y se quede hasta el infinito esperando una entrada por teclado
+ENV DEBIAN_FRONTEND noninteractive
+
+#Actualizo los repositorios e instalo python3 y pip3
+RUN apt update && apt install python3 python3-pip -y
+
+#Creo el grupo y usuario testeo
+RUN groupadd testeo && useradd -ms /bin/bash -g testeo testeo
+
+#Cambia al usuario testeo
+USER testeo
+
+#Establezco un directorio en el que haré las instalaciones y copiaré el task.yaml
+WORKDIR /home/testeo
+
+#Configuro path para que encuentre pypyr y python3
+ENV PATH=$PATH:/home/testeo/.local/bin
+
+#Actualizo pip pues es el instalador de paquetes que voy a usar ahora
+RUN python3 -m pip install --upgrade pip
+
+#Instalo el task runner
+RUN pip3 install --user pypyr
+
+#Copio el código con las tareas del task runner
+COPY task.yaml ./
+
+#Instalo dependencias del proyecto
+RUN pypyr task installdeps
+
+#Cambio a un directorio exclusivo para pasar los test
+WORKDIR /app/test
+
+ENTRYPOINT ["pypyr","task","test"]
+
+```
+
+Y tras contruirlo para obtener sus tiempos y tamaño, obtengo los siguientes resultados en comparación con `python:3.9.10-slim`:
+
+| REPOSITORY            |  IMAGE ID     | SIZE  | Building Time | Building Time (Cached) |
+|-----------------------|---------------|-------|---------------|------------------------|
+| python_slim           |  92b29a2b3753 | 147MB | 22.5s (14/14) | 0.8s (13/13) |
+| ubuntu                |  f771ef13c25d | 481MB | 42.3s (16/16) | 1.6s (15/15) |
+
+En cunto al analisis de seguridad, de forma sorprendente encontramos lo siguiente:
+
+![docker scan ubuntu manual](/docs/imgs/vulnerabilidad_ubuntu.png)
+
+Este resultado me sorprende bastante y en cierta parte me extraña que sea tan buen, pero deduzco que al ser una de las últimas versiones de Ubuntu, aún no haya demasiados reportes de fallos conocidos para ella, sumado a que es la que tiene más soporte, resulte en que no tienen ninguna vulnerabilidad conocida.
+
+Pero a pesar de tener tan buen resultado en vulnerabilidades, el tamaño y tiempo de construcción es significativamente mayor al de `python:3.9.10-slim`, por lo que sigo manteniendo la elección que hice anteriormente. Llegando a la conclusión final de que cualquier imagen a la que haya que instalarle dependencias extra, como puede ser python, o gcc, van a provocar que su tamaño y tiempo de construcción suban considerablemente en comparación con las imágenes oficiales de python.
+
+Remarcar que si lo que se busca es a toda costa una imagen segura sin importar tiempo de construcción ni tamaño, la mejor opción será una alpine o un SO base + python manual, viendo los resultados de este análisis.
