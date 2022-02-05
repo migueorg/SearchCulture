@@ -128,3 +128,28 @@ Una vez construidas correctamente todas las imágenes, he obtenido los siguiente
 | python_alpine         |  3473a9b4006b | 268MB | 39.1s (16/16) | 1.4s (15/15) |
 | python_slim_buster    |  73fbf2d98f4f | 139MB | 18.2s (14/14) | 0.7s (13/13) |
 | python_slim           |  92b29a2b3753 | 147MB | 22.5s (14/14) | 0.8s (13/13) |
+
+Tras esto saco varias conclusiones. Para empezar me llama la atención que la alpine, pese a ser la más ligera y mínima de primeras, tras instalar las dependencias necesarias, pasa a ocupar más que las slim, y que debido a la necesidad de instalar dependencias externas, el tiempo de construcción aumenta considerablemente en comparación con las slim que sí traen más paquetes necesarios, por lo que tras esto descarto la versión alpine. 
+
+Siguiendo por la de bitnami, al ser una imagen más pesada que las slim, también se refleja en el tiempo de construcción, consiguiendo tiempos notáblemente peores, por lo que viendo que pesa más y que tarda más en construirse, también es descartada.
+
+Y a la hora de optar entre `python:3.9.10-slim` y `python:3.9.10-slim-buster`, viendo el análisis hecho hasta ahora, el sentido común diría que use python_slim_buster pues es la que menos ocupa y menos tarda en construir de las dos, pero al ser diferencias tan pequeñas, quiero tener en cuenta otro criterio más para decidirme, en este caso, el de seguridad, por lo que usando la herramienta incluida por defecto `docker scan` la cual analiza las vulnerabilidades de los contenedores, analizaré ambas imágenes, de la cual obtengo lo siguiente:
+
+- Para `python:3.9.10-slim-buster`
+
+![docker scan python:3.9.10-slim-buster](/docs/imgs/vulnerabilidad_slim_buster.png)
+
+- Para `python:3.9.10-slim`
+
+![docker scan python:3.9.10-slim](/docs/imgs/vulnerabilidad_slim.png)
+
+Este resultado me sorprendió porque indica que la slim usa como imagen base slim-bullseye, por lo que volví a generar la slim por si me había equivocado al hacer el Dockerfile, pero efectivamente estaba bien y volvió a dar el mismo resultado.
+
+**Por lo que teniendo en cuenta las vulnerabilidades y la seguridad, me quedo con la `python:3.9.10-slim` ya que en tamaño y tiempos estaban muy a la par.**
+***
+**Bonus:** Tras esto por curiosidad también analicé la de `python:3.9.10-alpine3.15`, ya que al ser una imagen tan reducida y tan recortada en cuanto a dependencias, debería notarse en cuanto a vulnerabilidades, la cual me dió el siguiente resultado:
+
+![docker scan python:3.9.10-alpine3.15](/docs/imgs/vulnerabilidad_alpine.png)
+
+Efectivamente al tener tan pocas dependencias, las vulnerabilidades son mucho menores que en el resto. Por lo que saco como conclusión que si mi principal criterio fuese usar una imagen segura, sin importar tiempos de construcción ni tamaño, me quedaría con python:3.9.10-alpine3.15.
+***
