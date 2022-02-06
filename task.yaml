@@ -9,6 +9,7 @@ steps:
         check: False
         test: False
         run: False
+        docker: False
 
   - name: pypyr.steps.cmd
     run: '{test}'
@@ -73,3 +74,9 @@ steps:
     run: '{run}'
     in:
       cmd: python3 src/usuario.py
+
+  - name: pypyr.steps.shell
+    run: '{docker}'
+    in:
+      cmd: 
+        run: docker run -t -v `pwd`:/app/test migueorg/search-culture
