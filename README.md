@@ -51,4 +51,4 @@ Para ejecutar los test a través de Docker se ha usado la imagen python:3.9.10-s
 Para lanzar los test usando el contenedor puedes usar:
 >pypyr task docker
 
-El comando anterior se descargará la [siguiente imagen](https://hub.docker.com/r/migueorg/search-culture)
+El comando anterior se descargará la [siguiente imagen](https://hub.docker.com/r/migueorg/searchculture)

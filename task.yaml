@@ -79,4 +79,4 @@ steps:
     run: '{docker}'
     in:
       cmd: 
-        run: docker run -t -v `pwd`:/app/test migueorg/search-culture
+        run: docker run -t -v `pwd`:/app/test migueorg/searchculture
