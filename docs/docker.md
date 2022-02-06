@@ -286,3 +286,9 @@ ENTRYPOINT ["pypyr","task","test"]
 ## Github Action
 ***
 En este caso, las condiciones que deseo que se den para que se actualice la imagen en DockerHub son o bien un **push**, o bien un **pull request**. Pero ambos siempre y cuando se haya **modificado el Dockerfile** ya que será el archivo que afecta a la imagen. 
+
+Por lo que para satisfacer la configuración del disparador me he ayudado de [esta web](https://futurestud.io/tutorials/github-actions-run-on-pull-request).
+
+Mientras que para realizar la tarea de subida a DockerHub he usado la [siguiente documentación oficial](https://docs.github.com/es/actions/publishing-packages/publishing-docker-images).
+
+Y como por lo visto las action que aparecen en el tutorial oficial del enlace anterior ya están deprecated, las nuevas versiones para las action las he cogido del [marketplace oficial de github actions](https://github.com/marketplace/actions/docker-metadata-action#basic)
