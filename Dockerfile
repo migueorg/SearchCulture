@@ -1,5 +1,7 @@
 FROM python:3.9.10-slim
 
+LABEL version="0.0.1" maintainer="migueorg@correo.ugr.es"
+
 #Creo el grupo y usuario testeo
 RUN groupadd testeo && useradd -ms /bin/bash -g testeo testeo
 

@@ -44,7 +44,7 @@ Ejecuta los test programados
 ***
 ## Test Unitarios:
 Para ejecutar los test unitarios se ha elegido [Pytest](https://github.com/pytest-dev/pytest) como marco de ejecución y [AssertPy](https://github.com/assertpy/assertpy) como biblioteca de aserciones. Puedes consultar el extenso análisis y proceso de selección, así como los criterios que se han usado para el mismo en [docs/test.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-4/docs/test.md)
-
+***
 ## Docker:
 Para ejecutar los test a través de Docker se ha usado la imagen python:3.9.10-slim como base. Puedes ver los criterios de selección así como el proceso de selección y análisis detallado en [docs/docker.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-5/docs/docker.md)
 
