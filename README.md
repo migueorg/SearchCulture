@@ -10,6 +10,7 @@ Proyecto en la nube que será capaz de recomendar contenido (Películas, Series,
 
 ## Otra documentación secundaria: [docs/wiki.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-1/docs/wiki.md) :file_folder:
 
+***
 ## Automatización:
 
 Como Task Runner se ha optado por usar [pypyr](https://github.com/pypyr/pypyr). Puedes ver su proceso de elección [aquí](https://github.com/migueorg/SearchCulture/blob/Objetivo-3/docs/taskrunner_choice.md).
@@ -36,6 +37,18 @@ Lanza todas las órdenes necesarias para que el proyecto se ejecute
 Comprueba si la sintaxis está correcta
 > pypyr task check
 
-#### Ejecutar los test (Soon...)
+#### Ejecutar los test
 Ejecuta los test programados
 > pypyr task test
+
+***
+## Test Unitarios:
+Para ejecutar los test unitarios se ha elegido [Pytest](https://github.com/pytest-dev/pytest) como marco de ejecución y [AssertPy](https://github.com/assertpy/assertpy) como biblioteca de aserciones. Puedes consultar el extenso análisis y proceso de selección, así como los criterios que se han usado para el mismo en [docs/test.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-4/docs/test.md)
+***
+## Docker:
+Para ejecutar los test a través de Docker se ha usado la imagen python:3.9.10-slim como base. Puedes ver los criterios de selección así como el proceso de selección y análisis detallado en [docs/docker.md](https://github.com/migueorg/SearchCulture/blob/Objetivo-5/docs/docker.md)
+
+Para lanzar los test usando el contenedor puedes usar:
+>pypyr task docker
+
+El comando anterior se descargará la [siguiente imagen](https://hub.docker.com/r/migueorg/searchculture)

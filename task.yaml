@@ -7,12 +7,24 @@ steps:
         list: False
         installdeps: False
         check: False
+        test: False
         run: False
+        docker: False
+
+  - name: pypyr.steps.cmd
+    run: '{test}'
+    in:
+      cmd: python3 -m pytest
 
   - name: pypyr.steps.cmd
     run: '{installdeps}'
     in:
-      cmd: echo 'Ninguna dependencia de momento'
+      cmd: pip3 install -U assertpy==1.1
+
+  - name: pypyr.steps.cmd
+    run: '{installdeps}'
+    in:
+      cmd: pip3 install -U pytest==6.2.5
 
   - name: pypyr.steps.echo
     run: '{list}'
@@ -62,3 +74,9 @@ steps:
     run: '{run}'
     in:
       cmd: python3 src/usuario.py
+
+  - name: pypyr.steps.shell
+    run: '{docker}'
+    in:
+      cmd: 
+        run: docker run -t -v `pwd`:/app/test migueorg/searchculture
