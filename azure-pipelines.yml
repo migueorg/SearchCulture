@@ -1,0 +1,18 @@
+trigger:
+  branches:
+    include: 
+      - Objetivo-/*
+      - master
+    exclude:
+      - Objetivo-1
+      - Objetivo-2
+      - Objetivo-3
+      - Objetivo-4
+      - Objetivo-5
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: docker run -t -v `pwd`:/app/test migueorg/searchculture
+  displayName: 'Ejecuta los test usando el contenedor'
