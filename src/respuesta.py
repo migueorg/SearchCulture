@@ -44,15 +44,17 @@ class Respuesta:
     def almacena_palabras(self):
         """Guarda en un diccionario la palabras de la lista, 
         acompañado del número de apariciones que tiene cada una."""
-        diccionario = {}
+        
+        if self.diccionario == {}:
+            diccionario = {}
 
-        for palabra in self.palabras:
-            if palabra in diccionario:
-                diccionario[palabra] += 1
-            else: 
-                diccionario[palabra] = 1
+            for palabra in self.palabras:
+                if palabra in diccionario:
+                    diccionario[palabra] += 1
+                else: 
+                    diccionario[palabra] = 1
 
-        self.diccionario = diccionario
+            self.diccionario = diccionario
 
     def get_diccionario(self):
         """Devuelve el diccionario con las palabras de la 
