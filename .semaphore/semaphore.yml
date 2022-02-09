@@ -1,0 +1,23 @@
+version: v1.0
+name: Testea diferentes versiones de Python
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Establece y lanza versiones
+    task:
+      jobs:
+        - name: pypyr test
+          matrix:
+            - env_var: PYTHON_VERSION
+              values:
+                - '3.7'
+                - '3.8'
+                - '3.10'
+          commands:
+            - sem-version python $PYTHON_VERSION
+            - checkout
+            - pip install --user pypyr
+            - pypyr task installdeps
+            - pypyr task test
