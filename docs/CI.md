@@ -61,6 +61,8 @@ Tras el análisis vemos que Azure Pipeline se ajusta perfectamente a lo que busc
 - Travis CI se encargará de testar las diferentes versiones de Python, ya que Semaphore CI solo dispone de Python 3.8 y 3.9.
 - Semaphore CI se encargará de ejecutar los test usando el contenedor Docker del Objetivo anterior.
 
+**Actualización:** Dado que Azure Pipelines me ha activado el uso de sus servidores antes de la entrega final del objetivo, integro adicionalmente este sistema de Integración Continua. Encargándose de testear las versiones de Python (lo mismo que Travis CI), para, en un futuro quedarme solo con Azure Pipelines.
+
 ***
 ## Elección versiones de Python a testear
 ***
