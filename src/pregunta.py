@@ -27,7 +27,6 @@ class Pregunta:
             Equivalente de cada palabra de la respuesta
         """
 
-        self.id = next(Pregunta.id_iter)
         self.pregunta = pregunta
         self.ponderaciones = ponderaciones
 
