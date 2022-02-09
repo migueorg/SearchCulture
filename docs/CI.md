@@ -52,3 +52,8 @@ A continuación tras haber encontrado varios servicios (y haber descartado basta
   - [x] Tiene una interfaz bastante agradable y sencilla, guiándote a través de un tutorial bastante efectivo y con un montón de opciones y ejemplos concretos, muchos de ellos muy acertados, por lo que cumple el requisito. 
 
 Tras el análisis vemos que Azure Pipeline se ajusta perfectamente a lo que buscamos pero tiene un gran problema que no aprecias hasta que ejecutas la primera tarea. Para empezar a usarlo con servidores hosteados por ellos mismos, tienes que rellenar un formulario, el cual tardan 2 a 3 días en aceptar, de lo contrario solo puedes usar entornos self-hosted. Así que tras haber creado las tareas y haber configurado todo para que funcione con Azure Pipelines, tengo que descartarla puesto que no dispongo de esos 2-3 días que tardan en aceptar la solicitud.
+
+***
+### Conclusión
+
+> Tras haber analizado las principales alternativas planteadas, siguiendo ambos criterios, tanto búsqueda como aceptación, y teniendo en cuenta la limitación temporal de activación de Azure Pipelines, se han elegido **Travis CI** y **Semaphore CI** como sistemas de CI a implementar en este proyecto.
