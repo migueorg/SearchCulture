@@ -1,0 +1,14 @@
+version: v1.0
+name: 'Lanza los test del proyecto '
+agent:
+  machine:
+    type: e1-standard-2
+    os_image: ubuntu2004
+blocks:
+  - name: Corre Docker con Python 3.9
+    task:
+      jobs:
+        - name: Ejecuta test con Docker
+          commands:
+            - checkout
+            - 'docker run -t -v `pwd`:/app/test migueorg/searchculture'
