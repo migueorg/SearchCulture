@@ -58,8 +58,8 @@ Tras el análisis vemos que Azure Pipeline se ajusta perfectamente a lo que busc
 
 > Tras haber analizado las principales alternativas planteadas, siguiendo ambos criterios, tanto búsqueda como aceptación, y teniendo en cuenta la limitación temporal de activación de Azure Pipelines, se han elegido **Travis CI** y **Semaphore CI** como sistemas de CI a implementar en este proyecto.
 
-- Semaphore CI se encargará de testar las diferentes versiones de Python, ya que tiene paralelismo y maneja tiempos bastante reducidos.
-- Travis CI se encargará de ejecutar los test usando el contenedor Docker del Objetivo anterior.
+- Travis CI se encargará de testar las diferentes versiones de Python, ya que Semaphore CI solo dispone de Python 3.8 y 3.9.
+- Semaphore CI se encargará de ejecutar los test usando el contenedor Docker del Objetivo anterior.
 
 ***
 ## Elección versiones de Python a testear
