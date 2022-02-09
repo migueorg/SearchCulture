@@ -4,7 +4,7 @@ python:
   - "3.8"
   - "3.10"
 install:
-  - pip install --user pypyr
+  - pip install pypyr
   - pypyr task installdeps
 script:
   - pypyr task test

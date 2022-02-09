@@ -10,4 +10,5 @@ blocks:
       jobs:
         - name: Ejecuta test con Docker
           commands:
+            - cd ..
             - 'docker run -t -v `pwd`:/app/test migueorg/searchculture'
