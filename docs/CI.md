@@ -57,3 +57,20 @@ Tras el análisis vemos que Azure Pipeline se ajusta perfectamente a lo que busc
 ### Conclusión
 
 > Tras haber analizado las principales alternativas planteadas, siguiendo ambos criterios, tanto búsqueda como aceptación, y teniendo en cuenta la limitación temporal de activación de Azure Pipelines, se han elegido **Travis CI** y **Semaphore CI** como sistemas de CI a implementar en este proyecto.
+
+***
+## Elección versiones de Python a testear
+***
+Para seleccionar que versiones se van a testear, primeramente se analizó el código del proyecto en busca de alguna dependencia en cuanto a estructura o método concreto, que dependa de alguna versión reciente, pero no existía ninguna así.
+
+Lo siguiente que se tuvo en cuenta fue el [estado del mantenimiento y soporte actual](https://endoflife.date/python) de manera oficial. De lo cual pude obtener que a día de hoy son mantenidas las versiones 3.7 (a la cual le queda 1 año y 4 meses de soporte) en adelante. Por lo que ahora mismo tendría como versiones a testear las siguientes: [3.7, 3.8, 3.9, 3.10]
+
+Con el fin de acotar más aún las versiones de python compatibles, se analizó también la compatibilidad de las dependencias externas del proyecto, en este caso, pypyr, assertpy y pytest. De lo cual obtuve:
+
+- pypyr: Compatible con Python [3.7, 3.8, 3.9, 3.10], o más que compatible, son en las versiones en las que ellos lo testean y aseguran que va a funcionar.
+- assertpy: Compatible con Python [3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 3.10]
+- pytest: Compatible con Python [3.6, 3.7, 3.8, 3.9, 3.10]
+
+>Con todo esto en cuenta, siendo los limitantes el soporte y la compatibilidad con pypyr, las versiones compatibles con mi proyecto y por tanto las que testearé son [3.7, 3.8, 3.9, 3.10]
+
+>Sin embargo con la imagen Docker creada en el Objetivo 5, ya se está testeando la versión de Python 3.9, por lo que en uno de los sistemas de CI se testearán Python [3.7, 3.8 y 3.10]
