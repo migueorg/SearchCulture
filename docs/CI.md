@@ -25,7 +25,28 @@ Siguiendo los criterios de búsqueda establecidos previamente, algunos sistemas 
 - [Azure Pipelines](https://azure.microsoft.com/es-es/services/devops/pipelines/)
 - [Semaphore CI](https://semaphoreci.com/)
 
-**Bonus:** Otras opciones que se han revisiones y pintaban bien pero finalmente no cumplían algunos criterios de búsqueda y por tanto no han llegado al análisis:
+**Bonus:** Otras opciones que se han revisado y pintaban bien pero finalmente no cumplían algunos criterios de búsqueda y por tanto no han llegado al análisis:
 - [CircleCI](https://circleci.com/): Además de no poder usarlo porque lo ha usado la mayoría de la gente, [tiene una disponibilidad malísima](https://status.circleci.com/uptime), en comparación con todos los que he comparado, es el peor parado. Todos los meses tiene como mínimo 1 o 2 caídas.
 - [codemagic](https://codemagic.io/start/): Pintaba bien y con buenos asistentes, además las imágenes incorporan Docker y Python, pero es un CI/CD demasiado enfocado a desarrollo móvil (Flutter, Swift, React Native, etc), llegando a puntos que es complicado empezar un proyecto que no sea para desarrollo móvil, por lo que es una herramienta que se cierra mucho a un solo sector, lo cual nos puede traer problemas en el futuro.
 - [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/): Para poder conectarlo con Github [tienes que ser premium en Gitlab](https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/github_integration.html).
+
+***
+### Proceso de selección y estudio
+A continuación tras haber encontrado varios servicios (y haber descartado bastantes) que se ajustan a los criterios de búsqueda establecidos, voy a pasar a hacer un análisis y comparativa según los criterios de aceptación también previamente establecidos. 
+
+- Github Action
+  - [ ] No cumple el requisito de disponibilidad, pues aunque no está a la altura de los malos resultados de CircleCI, todos los meses [tienen varias incidencias con Github Actions](https://www.githubstatus.com/history), si bien es verdad que la mayoría no son graves, y que los suelen resolver rápido, me ha parecido excesivo el número de incidencias que tienen. Se entiende que es debido al gran volumen de tráfico que manejan.
+  - [x] Cuenta con [2.000 minutos gratis](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions#included-storage-and-minutes) al mes para cuentas Free. Por lo que cumple este requisito.
+  - [ ] A pesar de tener muy buena documentación y muchísimos ejemplos, en cuanto a asistente de iniciación podría ser mejorable (de hecho en el objetivo anterior la lie un poco para añadir la Action al PR pues andaba algo perdido). Si bien es cierto que al venir incorporado en Github, beneficia la curva de dificultad, de primeras te ves algo saturado y perdido en cuanto a como empezar.
+- Travis CI
+  - [x] Cumple con creces este requisito, pues [tienen un uptime del 100%](https://www.traviscistatus.com/uptime?page=1) en todo 2021 (de hecho me ha sorprendido ese 100%). [La incidencia más grande y reciente](https://www.traviscistatus.com/incidents/813z61sk317x) que han tenido fue en junio de 2021 en la que **algunas** builds dieron problemas.
+  - [ ] No cumple este requisito pues ofrece solo 30 días de prueba, una vez pasan, tienes que pagar para seguir usándolo.
+  - [ ] Tiene una documentación muy buena y concreta, de hecho me ha sorprendido gratamente, pero no cuenta con asistentes y ayudas para principiantes tan directos como el resto, que es lo que se busca en este requisito. 
+- Azure Pipelines
+  - [x] Al igual que Travis, cumple con creces este requisito, pues en el último año [no han tenido ninguna caída](https://status.dev.azure.com/_history), y la incidencia menor más reciente fue en octubre y afectaba solo a creación de imágenes de Windows nuevas.
+  - [x] Ofrecen 1800 minutos al mes, por lo que cumple el requisito.
+  - [x] Satisface el requisito, ya que tiene unos asistentes de bienvenida muy completos y acertados, haciendo que la curva inicial sea lo más baja posible. 
+- [Semaphore CI](https://semaphoreci.com/)
+  - [x] Cumple este requisito pues a pesar de no tener un uptime del 100% como Travis, [se acerca mucho](https://status.semaphoreci.com/uptime?page=1), y las incidencias que han tenido han sido en su mayoría ralentizaciones. 
+  - [ ] No cumple este requisito pues ofrece un crédito inicial de 10$ y una vez los agotas tienes que pagar para poder seguir usándolo.
+  - [x] Tiene una interfaz bastante agradable y sencilla, guiándote a través de un tutorial bastante efectivo y con un montón de opciones y ejemplos concretos, muchos de ellos muy acertados, por lo que cumple el requisito. 
