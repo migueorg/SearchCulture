@@ -36,7 +36,7 @@ def test_generos():
     generos_vacio = {'Accion':0.0, 'Drama':0.0, 'Comedia':0.0, 'Sci-fi':0.0}
 
     assert_that(nex.get_generos()).is_equal_to(generos_vacio)
-    assert_that(nex.get_genero_concreto('Accion')).is_equal_to(0.0)
+    assert_that(nex.get_generos()['Accion']).is_equal_to(0.0)
 
 def test_calculos():
     """Comprueba que los calculos sobre los generos  en base a la pregunta y respuesta se hacen correctamente"""
@@ -54,5 +54,5 @@ def test_calculos():
 
     nex.calcula_generos()
     assert_that(nex.get_generos()).is_not_equal_to(generos_vacio)
-    assert_that(nex.get_genero_concreto('Accion')).is_greater_than(0.0)
-    assert_that(nex.get_genero_concreto('Accion')).is_less_than(3.0)
+    assert_that(nex.get_generos()['Accion']).is_greater_than(0.0)
+    assert_that(nex.get_generos()['Accion']).is_less_than(3.0)

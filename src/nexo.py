@@ -47,11 +47,6 @@ class Nexo:
 
         return self.generos
 
-    def get_genero_concreto(self, genero):
-        """Devuelve el valor de apego calculado para un genero en concreto"""
-
-        return self.generos[genero]
- 
     def calcula_generos(self):
         """Usa los diccionarios de pregunta y respuesta para calcular un valor a los generos"""
 
