@@ -16,3 +16,16 @@ Dado que casi todos los servicios de CI/CD que se encuentran satisfacan los crit
 - Alta disponibilidad. Se tendrá en cuenta el uptime de cada servicio de CI puesto que los buscamos ya implementados en la nube.
 - Bondad del plan gratuito. Se valorará también para cada uno, cuales son las posibilidades del plan gratuito que incluyen, es decir, minutos que ofrece cada uno, usos, características, etc.
 - Asistente y ayudas para su configuración. Puesto que es el primer contacto con este tipo de herramientas y sistemas, se tendrá en cuenta los asistentes iniciales para ayuda a los primeros pasos así como de configuración.
+
+***
+### Opciones Existentes que se van a analizar 
+Siguiendo los criterios de búsqueda establecidos previamente, algunos sistemas que se ajustan a lo necesario son:
+- [Github Action](https://github.com/features/actions)
+- [TravisCI](https://www.travis-ci.com/)
+- [Azure Pipelines](https://azure.microsoft.com/es-es/services/devops/pipelines/)
+- [Semaphore CI](https://semaphoreci.com/)
+
+**Bonus:** Otras opciones que se han revisiones y pintaban bien pero finalmente no cumplían algunos criterios de búsqueda y por tanto no han llegado al análisis:
+- [CircleCI](https://circleci.com/): Además de no poder usarlo porque lo ha usado la mayoría de la gente, [tiene una disponibilidad malísima](https://status.circleci.com/uptime), en comparación con todos los que he comparado, es el peor parado. Todos los meses tiene como mínimo 1 o 2 caídas.
+- [codemagic](https://codemagic.io/start/): Pintaba bien y con buenos asistentes, además las imágenes incorporan Docker y Python, pero es un CI/CD demasiado enfocado a desarrollo móvil (Flutter, Swift, React Native, etc), llegando a puntos que es complicado empezar un proyecto que no sea para desarrollo móvil, por lo que es una herramienta que se cierra mucho a un solo sector, lo cual nos puede traer problemas en el futuro.
+- [Gitlab CI/CD](https://docs.gitlab.com/ee/ci/): Para poder conectarlo con Github [tienes que ser premium en Gitlab](https://docs.gitlab.com/ee/ci/ci_cd_for_external_repos/github_integration.html).
